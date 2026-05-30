@@ -1,0 +1,32 @@
+### Payment failure
+POST http://localhost:8081/notify
+Content-Type: application/json
+
+{
+    "messageCode": "PAY_FAIL_001",
+    "messageDescription": "Payment failed for order #45678 due to insufficient funds",
+    "source": "payment-gateway",
+    "sourceID": "pg-instance-7"
+}
+
+### Auth failure
+POST http://localhost:8081/notify
+Content-Type: application/json
+
+{
+    "messageCode": "AUTH_FAIL_001",
+    "messageDescription": "Unauthorized login attempt detected for user #98234",
+    "source": "auth-service",
+    "sourceID": "auth-instance-3"
+}
+
+### Inventory low
+POST http://localhost:8081/notify
+Content-Type: application/json
+
+{
+    "messageCode": "INV_LOW_001",
+    "messageDescription": "Inventory level critically low for product #SKU-4521",
+    "source": "inventory-service",
+    "sourceID": "inv-instance-2"
+}
