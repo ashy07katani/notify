@@ -13,7 +13,10 @@ func main() {
 	godotenv.Load("local.env")
 	log.Println("Starting delivery main method.")
 	repo := repository.NewNotifyRepo()
-	msg := make(chan *kafka.Message, 3)
+	slackMsg := make(chan *kafka.Message, 3)
+	mailMsg := make(chan *kafka.Message, 3)
 	deliverySlack := delivery.NewDeliverySlack(repo)
-	deliverySlack.Deliver(msg)
+	go deliverySlack.Deliver(slackMsg)
+	deliveryMail := delivery.NewDeliveryMail(repo)
+	deliveryMail.Deliver(mailMsg)
 }

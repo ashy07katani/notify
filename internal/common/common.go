@@ -2,6 +2,7 @@ package common
 
 type EventStatus string
 type ClassiedCategory string
+type CommunicationChannel string
 
 const (
 	StatusSaved      EventStatus = "saved"
@@ -16,6 +17,11 @@ const (
 	CategoryHigh   ClassiedCategory = "HIGH"
 	CategoryMedium ClassiedCategory = "MEDIUM"
 	CategoryLow    ClassiedCategory = "LOW"
+)
+
+const (
+	ChannelEmail CommunicationChannel = "email"
+	ChannelSlack CommunicationChannel = "slack"
 )
 
 /*

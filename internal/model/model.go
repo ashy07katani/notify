@@ -38,9 +38,10 @@ type NotifyDocument struct {
 }
 
 type SubscriptionDocument struct {
-	Id         string `bson:"_id"`
-	Source     string `bson:"source"`
-	Severity   string `bson:"severity"`
-	Channel    string `bson:"channel"`
-	WebhookURL string `bson:"webhookURL"`
+	Id             string   `bson:"_id"`
+	Source         string   `bson:"source"`
+	Severity       string   `bson:"severity"`
+	Channel        string   `bson:"channel"`
+	WebhookURL     string   `bson:"webhookURL"`
+	EmailAddresses []string `bson:"email"`
 }
